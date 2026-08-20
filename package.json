@@ -1,0 +1,23 @@
+{
+  "name": "viacep-atividade-1",
+  "version": "1.0.0",
+  "description": "API de integracao com o ViaCEP - Desenvolvimento Web III (Atividade 01)",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "viacep",
+    "api",
+    "express",
+    "rest",
+    "xml"
+  ],
+  "author": "Matheus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
