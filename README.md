@@ -26,3 +26,35 @@ GET /cep/83321000
 GET /endereco/PR/Curitiba/Sete de Setembro
 GET /cep/83321000/xml
 ```
+
+# Atividade 02 - Frontend / Login (CRUD de usuários)
+
+API de usuários (Node + Express + Sequelize + SQLite) e tela React (Vite) com modal de cadastro, edição, exclusão e busca por ID.
+
+## Backend
+
+```
+cd backend
+npm install
+npm start
+```
+
+Servidor em http://localhost:3001
+
+Rotas:
+
+- GET /api/usuarios -> lista todos os usuários
+- GET /api/usuarios/:id -> busca usuário por ID
+- POST /api/usuarios -> cria usuário (nome, email, senha)
+- PUT /api/usuarios/:id -> edita usuário
+- DELETE /api/usuarios/:id -> exclui usuário
+
+## Frontend
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+Tela em http://localhost:5173

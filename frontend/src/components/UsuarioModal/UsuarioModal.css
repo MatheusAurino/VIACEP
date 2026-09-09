@@ -1,0 +1,140 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 100;
+}
+
+.modal {
+    background: #ffffff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: modal-entrar 0.15s ease-out;
+}
+
+@keyframes modal-entrar {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem 0.5rem;
+}
+
+.modal-cabecalho h2 {
+    font-size: 1.15rem;
+    margin: 0;
+    color: #0f172a;
+}
+
+.modal-fechar {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #64748b;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.modal-fechar:hover {
+    background: #f1f5f9;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.5rem 1.5rem 1.5rem;
+}
+
+.modal-form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 0.6rem;
+}
+
+.modal-dica {
+    font-weight: 400;
+    color: #94a3b8;
+    font-size: 0.78rem;
+}
+
+.modal-form input {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.modal-form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.modal-erro {
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0;
+}
+
+.modal-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+}
+
+.botao {
+    border: none;
+    border-radius: 8px;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.botao:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.botao-primario {
+    background: #2563eb;
+    color: #fff;
+}
+
+.botao-primario:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.botao-secundario {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.botao-secundario:hover:not(:disabled) {
+    background: #cbd5e1;
+}
