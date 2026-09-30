@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const Usuario = require('../models/Usuario');
+const { segredo, expiraEm } = require('../config/jwt');
 
 const login = async (email, senha) => {
     const usuario = await Usuario.findOne({ where: { email } });
@@ -14,8 +15,8 @@ const login = async (email, senha) => {
 
     const token = jwt.sign(
         { id: usuario.id, email: usuario.email },
-        process.env.JWT_SECRET,
-        { expiresIn: process.env.JWT_EXPIRES_IN }
+        segredo,
+        { expiresIn: expiraEm }
     );
 
     return { token, usuario: { id: usuario.id, nome: usuario.nome, email: usuario.email } };
