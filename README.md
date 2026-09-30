@@ -41,13 +41,26 @@ npm start
 
 Servidor em http://localhost:3001
 
-Rotas:
+Copie o `.env.example` para `.env` dentro de `backend/` antes de rodar.
+
+Rotas publicas:
+
+- POST /api/usuarios -> cria usuário (nome, email, senha), senha vai hasheada com bcrypt
+- POST /api/login -> valida com bcrypt.compare e devolve um token JWT
+
+Rotas protegidas (exigem token no body da requisição):
 
 - GET /api/usuarios -> lista todos os usuários
 - GET /api/usuarios/:id -> busca usuário por ID
-- POST /api/usuarios -> cria usuário (nome, email, senha)
 - PUT /api/usuarios/:id -> edita usuário
 - DELETE /api/usuarios/:id -> exclui usuário
+
+O middleware fica em `backend/src/middlewares/authMiddleware.js` e le o token de
+`req.body.token`. Sem esse campo no corpo da requisição, a API responde 401.
+
+Testando no Postman: primeiro cria um usuário em POST /api/usuarios, depois faz
+POST /api/login com email/senha pra pegar o token, e usa esse token no body das
+outras rotas: `{ "token": "..." }`.
 
 ## Frontend
 
